@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
-
-const nav = [
-  { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
-] as const;
+import { Menu, X, Sun, Moon, Languages } from "lucide-react";
+import { useSite } from "@/lib/site-context";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { tr, theme, toggleTheme, lang, toggleLang } = useSite();
+
+  const nav = [
+    { to: "/", label: tr("nav.home") },
+    { to: "/services", label: tr("nav.services") },
+    { to: "/about", label: tr("nav.about") },
+    { to: "/contact", label: tr("nav.contact") },
+  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -31,14 +33,14 @@ export function SiteHeader() {
       <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center justify-between h-20">
         <Link to="/" className="flex items-baseline gap-2 group">
           <span className="font-display text-2xl tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
-            Maison Lutea
+            Victor Salon
           </span>
           <span className="hidden sm:inline text-[0.65rem] tracking-[0.3em] uppercase text-muted-foreground">
-            Spa
+            {tr("brand.tag")}
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           {nav.map((item) => (
             <Link
               key={item.to}
@@ -50,21 +52,46 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+
+          <button
+            onClick={toggleLang}
+            aria-label="Toggle language"
+            className="flex items-center gap-1.5 text-xs tracking-[0.2em] uppercase text-foreground/80 hover:text-accent transition-colors"
+          >
+            <Languages size={14} />
+            {lang === "en" ? "SW" : "EN"}
+          </button>
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="text-foreground/80 hover:text-accent transition-colors"
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+
           <Link
             to="/contact"
             className="text-xs tracking-[0.2em] uppercase border border-foreground/80 px-5 py-2.5 hover:bg-foreground hover:text-background transition-colors"
           >
-            Book
+            {tr("nav.book")}
           </Link>
         </nav>
 
-        <button
-          aria-label="Menu"
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 -mr-2 text-foreground"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button onClick={toggleLang} aria-label="Toggle language" className="text-xs tracking-[0.2em] uppercase">
+            {lang === "en" ? "SW" : "EN"}
+          </button>
+          <button onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            aria-label="Menu"
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 -mr-2 text-foreground"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -85,7 +112,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 text-xs tracking-[0.2em] uppercase border border-foreground px-5 py-3 text-center"
             >
-              Book a treatment
+              {tr("nav.bookCta")}
             </Link>
           </div>
         </div>
