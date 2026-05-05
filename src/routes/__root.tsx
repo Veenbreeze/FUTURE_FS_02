@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SiteProvider } from "@/lib/site-context";
 
 function NotFoundComponent() {
   return (
@@ -29,9 +30,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Maison Lutea — Minimal Day Spa, Copenhagen" },
-      { name: "description", content: "A quiet sanctuary in Copenhagen offering considered facial, hair and body rituals." },
-      { name: "author", content: "Maison Lutea" },
+      { title: "Victor Salon — Modern Salon in Dodoma, Tanzania" },
+      { name: "description", content: "Victor Salon — a modern salon in Dodoma, Tanzania offering hair, skin and nail care." },
+      { name: "author", content: "Victor Salon" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -62,5 +63,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <SiteProvider>
+      <Outlet />
+    </SiteProvider>
+  );
 }
+

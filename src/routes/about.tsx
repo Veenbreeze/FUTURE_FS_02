@@ -1,68 +1,58 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { useSite } from "@/lib/site-context";
 import aboutImg from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Maison Lutea Spa, Copenhagen" },
-      { name: "description", content: "The story, philosophy, and people behind Maison Lutea, a minimal day spa in Copenhagen." },
-      { property: "og:title", content: "About — Maison Lutea" },
-      { property: "og:description", content: "Care as ritual, not transaction. Inside the philosophy of Maison Lutea." },
+      { title: "About — Victor Salon, Dodoma" },
+      { name: "description", content: "The story, philosophy, and people behind Victor Salon — a modern salon in Dodoma, Tanzania." },
+      { property: "og:title", content: "About — Victor Salon" },
+      { property: "og:description", content: "Care as ritual, not transaction. Inside Victor Salon, Dodoma." },
       { property: "og:image", content: aboutImg },
     ],
   }),
   component: AboutPage,
 });
 
-const team = [
-  { name: "Ida Sørensen", role: "Founder · Skin therapist" },
-  { name: "Mette Holm",   role: "Master stylist" },
-  { name: "Liv Hansen",   role: "Body & ritual therapist" },
-];
-
 function AboutPage() {
+  const { tr, lang } = useSite();
+
+  const team = [
+    { name: "Victor M.",    role: lang === "en" ? "Founder · Master stylist" : "Mwanzilishi · Mtaalamu mkuu" },
+    { name: "Grace K.",     role: lang === "en" ? "Skin therapist" : "Mtaalamu wa ngozi" },
+    { name: "Amina S.",     role: lang === "en" ? "Nail artist" : "Mtaalamu wa kucha" },
+  ];
+
   return (
     <SiteLayout>
       <section className="px-6 md:px-10 max-w-5xl mx-auto pt-20 md:pt-28 pb-20 text-center">
-        <p className="eyebrow mb-6">About the House</p>
-        <h1 className="text-5xl md:text-7xl leading-[1.05]">A spa built around what is removed, not added.</h1>
+        <p className="eyebrow mb-6">{tr("about.eyebrow")}</p>
+        <h1 className="text-5xl md:text-7xl leading-[1.05]">{tr("about.h1")}</h1>
       </section>
 
       <section className="px-6 md:px-10 max-w-7xl mx-auto">
         <div className="aspect-[16/9] overflow-hidden">
-          <img src={aboutImg} alt="Maison Lutea treatment room" width={1280} height={1280} className="h-full w-full object-cover" />
+          <img src={aboutImg} alt="Victor Salon interior" width={1280} height={1280} className="h-full w-full object-cover" />
         </div>
       </section>
 
       <section className="px-6 md:px-10 max-w-3xl mx-auto py-24 md:py-32 space-y-8 text-base md:text-lg leading-relaxed text-foreground/85">
-        <p>
-          Maison Lutea opened in 2014 in a quiet back-courtyard off Bredgade.
-          What began as a single room with a single therapist has grown into
-          a small house of three — but the principle has not changed: do
-          fewer things, do them slowly, do them well.
-        </p>
-        <p>
-          Our rooms are intentionally unadorned. Limewashed walls. Linen on
-          the bed. A single stem of something living. Music is optional, and
-          almost always declined.
-        </p>
-        <p>
-          We work with formulators in Denmark, France and Japan whose
-          products meet our two non-negotiable standards: clean composition
-          and demonstrable results. The rest, we believe, is theatre.
-        </p>
+        <p>{tr("about.body1")}</p>
+        <p>{tr("about.body2")}</p>
+        <p>{tr("about.body3")}</p>
       </section>
 
       <section className="bg-bone py-24 md:py-32 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
-          <p className="eyebrow text-center mb-4">Values</p>
-          <h2 className="text-3xl md:text-5xl text-center mb-16">Three quiet commitments.</h2>
+          <p className="eyebrow text-center mb-4">{tr("about.values.eyebrow")}</p>
+          <h2 className="text-3xl md:text-5xl text-center mb-16">{tr("about.values.h")}</h2>
           <div className="grid gap-12 md:grid-cols-3 text-center">
             {[
-              { t: "Slowness", d: "No treatment is shortened. Time is the active ingredient." },
-              { t: "Craft",    d: "Every therapist trains for a minimum of seven years before joining the house." },
-              { t: "Discretion", d: "Your visit is private. We keep no waiting room and take one guest at a time." },
+              { t: tr("about.value1.t"), d: tr("about.value1.d") },
+              { t: tr("about.value2.t"), d: tr("about.value2.d") },
+              { t: tr("about.value3.t"), d: tr("about.value3.d") },
             ].map((v) => (
               <div key={v.t}>
                 <h3 className="text-2xl mb-3">{v.t}</h3>
@@ -74,8 +64,8 @@ function AboutPage() {
       </section>
 
       <section className="py-24 md:py-32 px-6 md:px-10 max-w-6xl mx-auto">
-        <p className="eyebrow mb-4">The House</p>
-        <h2 className="text-3xl md:text-5xl mb-16">Three hands. One philosophy.</h2>
+        <p className="eyebrow mb-4">{tr("about.team.eyebrow")}</p>
+        <h2 className="text-3xl md:text-5xl mb-16">{tr("about.team.h")}</h2>
         <div className="grid gap-10 md:grid-cols-3">
           {team.map((m) => (
             <div key={m.name} className="border-t border-border pt-6">
@@ -88,7 +78,7 @@ function AboutPage() {
 
       <section className="py-24 md:py-32 px-6 md:px-10 text-center">
         <Link to="/contact" className="text-xs tracking-[0.22em] uppercase bg-foreground text-background px-8 py-4 hover:bg-accent transition-colors">
-          Reserve a treatment
+          {tr("home.cta.btn")}
         </Link>
       </section>
     </SiteLayout>
