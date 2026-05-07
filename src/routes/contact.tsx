@@ -107,7 +107,7 @@ function ContactPage() {
           <div>
             <p className="eyebrow mb-3">{tr("contact.reach")}</p>
             <p className="leading-relaxed">
-              <a href="tel:+255000000000" className="hover:text-accent">+255 000 000 000</a><br />
+              <a href="tel:+255616524726" className="hover:text-accent">+255 616 524 726</a><br />
               <a href="mailto:hello@victorsalon.co.tz" className="hover:text-accent">hello@victorsalon.co.tz</a>
             </p>
           </div>

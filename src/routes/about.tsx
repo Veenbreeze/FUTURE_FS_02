@@ -20,9 +20,13 @@ function AboutPage() {
   const { tr, lang } = useSite();
 
   const team = [
-    { name: "Victor M.",    role: lang === "en" ? "Founder · Master stylist" : "Mwanzilishi · Mtaalamu mkuu" },
-    { name: "Grace K.",     role: lang === "en" ? "Skin therapist" : "Mtaalamu wa ngozi" },
-    { name: "Amina S.",     role: lang === "en" ? "Nail artist" : "Mtaalamu wa kucha" },
+    { name: "Victor Mpambije.",    role: lang === "en" ? "Founder · Master stylist" : "Mwanzilishi" },
+    { name: "Grace .",     role: lang === "en" ? "Skin therapist" : "Mtaalamu wa ngozi" },
+    { name: "Amina .",     role: lang === "en" ? "Nail artist" : "Mtaalamu wa kucha" },
+    { name: "Joseph .",    role: lang === "en" ? "Reception & care" : "Mapokezi na huduma" },
+    { name: "Mercy .",    role: lang === "en" ? "Stylist" : "Mstylist" },
+    { name: "Samuel .",    role: lang === "en" ? "Assistant stylist" : "Msaidizi wa stylist" },
+    { name: "Zakia .",    role: lang === "en" ? "Hair stylist" : "Mtaalamu wa nywele" },
   ];
 
   return (
