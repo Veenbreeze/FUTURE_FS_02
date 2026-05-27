@@ -4,6 +4,10 @@ import { useSite } from "@/lib/site-context";
 import faceImg from "@/assets/service-face.jpg";
 import hairImg from "@/assets/service-hair.jpg";
 import nailsImg from "@/assets/service-nails.jpg";
+import hairImg2 from "@/assets/WhatsApp Image 2026-05-12 at 21.46.21.jpeg";
+import hairImg3 from "@/assets/WhatsApp Image 2026-05-12 at 21.46.20.jpeg";
+import hairImg4 from "@/assets/WhatsApp Image 2026-05-12 at 21.46.22.jpeg";
+
 
 export const Route = createFileRoute("/services")({
   head: () => ({
