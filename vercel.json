@@ -1,8 +1,9 @@
 {
-  "version": 3,
-  "build": {
-    "command": "npm run build",
-    "outputDirectory": "dist"
-  },
-  "routes": [{ "handle": "filesystem" }, { "src": "/.*", "dest": "/index.html" }]
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
 }
