@@ -1,45 +1,50 @@
 import js from "@eslint/js";
 import globals from "globals";
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
-import tsParser from "@typescript-eslint/parser";
 
 export default [
   {
-    ignores: ["dist", ".output", ".vinxi"],
+    ignores: ["dist/**", "node_modules/**", "*.gen.ts"],
+  },
+
+  js.configs.recommended,
+
+  {
+    files: ["**/*.{ts,tsx,js,jsx}"],
+
     languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: "module",
-      globals: globals.browser,
       parser: tsParser,
+
       parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
         ecmaFeatures: {
           jsx: true,
         },
       },
+
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
+
     plugins: {
+      "@typescript-eslint": tseslint,
       react,
       "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
     },
-    extends: [
-      js.configs.recommended,
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
-    ],
+
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
       "react/react-in-jsx-scope": "off",
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
+      "no-undef": "off",
+      "no-unused-vars": "warn",
+      "no-empty": "warn",
+
+      ...reactHooks.configs.recommended.rules,
     },
   },
 ];
