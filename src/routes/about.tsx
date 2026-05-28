@@ -7,9 +7,16 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Victor Salon, Dodoma" },
-      { name: "description", content: "The story, philosophy, and people behind Victor Salon — a modern salon in Dodoma, Tanzania." },
+      {
+        name: "description",
+        content:
+          "The story, philosophy, and people behind Victor Salon — a modern salon in Dodoma, Tanzania.",
+      },
       { property: "og:title", content: "About — Victor Salon" },
-      { property: "og:description", content: "Care as ritual, not transaction. Inside Victor Salon, Dodoma." },
+      {
+        property: "og:description",
+        content: "Care as ritual, not transaction. Inside Victor Salon, Dodoma.",
+      },
       { property: "og:image", content: aboutImg },
     ],
   }),
@@ -20,13 +27,13 @@ function AboutPage() {
   const { tr, lang } = useSite();
 
   const team = [
-    { name: "Victor Mpambije.",    role: lang === "en" ? "Founder · Master stylist" : "Mwanzilishi" },
-    { name: "Grace .",     role: lang === "en" ? "Skin therapist" : "Mtaalamu wa ngozi" },
-    { name: "Amina .",     role: lang === "en" ? "Nail artist" : "Mtaalamu wa kucha" },
-    { name: "Joseph .",    role: lang === "en" ? "Reception & care" : "Mapokezi na huduma" },
-    { name: "Mercy .",    role: lang === "en" ? "Stylist" : "Mstylist" },
-    { name: "Samuel .",    role: lang === "en" ? "Assistant stylist" : "Msaidizi wa stylist" },
-    { name: "Zakia .",    role: lang === "en" ? "Hair stylist" : "Mtaalamu wa nywele" },
+    { name: "Victor Mpambije.", role: lang === "en" ? "Founder · Master stylist" : "Mwanzilishi" },
+    { name: "Grace .", role: lang === "en" ? "Skin therapist" : "Mtaalamu wa ngozi" },
+    { name: "Amina .", role: lang === "en" ? "Nail artist" : "Mtaalamu wa kucha" },
+    { name: "Joseph .", role: lang === "en" ? "Reception & care" : "Mapokezi na huduma" },
+    { name: "Mercy .", role: lang === "en" ? "Stylist" : "Mstylist" },
+    { name: "Samuel .", role: lang === "en" ? "Assistant stylist" : "Msaidizi wa stylist" },
+    { name: "Zakia .", role: lang === "en" ? "Hair stylist" : "Mtaalamu wa nywele" },
   ];
 
   return (
@@ -38,7 +45,13 @@ function AboutPage() {
 
       <section className="px-6 md:px-10 max-w-7xl mx-auto">
         <div className="aspect-[16/9] overflow-hidden">
-          <img src={aboutImg} alt="Victor Salon interior" width={1280} height={1280} className="h-full w-full object-cover" />
+          <img
+            src={aboutImg}
+            alt="Victor Salon interior"
+            width={1280}
+            height={1280}
+            className="h-full w-full object-cover"
+          />
         </div>
       </section>
 
@@ -60,7 +73,9 @@ function AboutPage() {
             ].map((v) => (
               <div key={v.t}>
                 <h3 className="text-2xl mb-3">{v.t}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">{v.d}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                  {v.d}
+                </p>
               </div>
             ))}
           </div>
@@ -81,7 +96,10 @@ function AboutPage() {
       </section>
 
       <section className="py-24 md:py-32 px-6 md:px-10 text-center">
-        <Link to="/contact" className="text-xs tracking-[0.22em] uppercase bg-foreground text-background px-8 py-4 hover:bg-accent transition-colors">
+        <Link
+          to="/contact"
+          className="text-xs tracking-[0.22em] uppercase bg-foreground text-background px-8 py-4 hover:bg-accent transition-colors"
+        >
           {tr("home.cta.btn")}
         </Link>
       </section>

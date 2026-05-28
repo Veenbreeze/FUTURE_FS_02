@@ -1,10 +1,12 @@
 # Project Setup and CI/CD Guide
 
 ## Overview
+
 This repository is a React + Vite application configured for professional GitHub CI and Vercel deployment.
 It includes linting, formatting, type checks, pre-commit hooks, environment management, and a production build pipeline.
 
 ## Local Development
+
 1. Install dependencies:
    ```bash
    npm ci
@@ -20,6 +22,7 @@ It includes linting, formatting, type checks, pre-commit hooks, environment mana
 4. Open the local URL printed by Vite, usually `http://localhost:5173`.
 
 ## Scripts
+
 - `npm run dev` — start the Vite development server.
 - `npm run build` — generate a production-ready build in `dist`.
 - `npm run preview` — preview the production build locally.
@@ -32,12 +35,15 @@ It includes linting, formatting, type checks, pre-commit hooks, environment mana
 - `npm run ci` — run full CI-style checks and build.
 
 ## GitHub Actions CI Workflow
+
 The CI workflow is defined in `.github/workflows/ci.yml`.
 It runs on:
+
 - `pull_request` targeting `main`
 - `push` to `main`
 
 CI performs:
+
 - `npm ci`
 - `npm run check:types`
 - `npm run lint`
@@ -45,7 +51,9 @@ CI performs:
 - `npm run build`
 
 ## Pre-commit and Lint-staged
+
 Husky and lint-staged are configured to run on every commit.
+
 - `npx husky install` is triggered via the `prepare` script.
 - On `git commit`, staged `.js`, `.jsx`, `.ts`, `.tsx` files are automatically:
   - fixed with ESLint
@@ -54,13 +62,16 @@ Husky and lint-staged are configured to run on every commit.
 If lint-staged changes files during commit, they are re-staged automatically.
 
 ## Deployment to Vercel
+
 This project is ready for Vercel automatic deployment.
 The Vercel settings are configured in `vercel.json`:
+
 - `build.command`: `npm run build`
 - `outputDirectory`: `dist`
 - SPA route fallback to `index.html` for client-side routing
 
 ### Vercel Setup
+
 1. Connect the GitHub repository to Vercel.
 2. Ensure the project uses the root folder.
 3. Confirm the build command is `npm run build`.
@@ -68,17 +79,20 @@ The Vercel settings are configured in `vercel.json`:
 5. Add any required environment variables in the Vercel dashboard.
 
 ## Environment Variables
+
 - `.env` and `.env.*` files are ignored by Git.
 - Example values are stored in `.env.example`.
 - Use only `VITE_` prefixed variables for Vite client injection.
 
 ### Recommended `.env.example`
+
 ```text
 VITE_API_URL=https://api.example.com
 VITE_PUBLIC_URL=https://example.com
 ```
 
 ## Troubleshooting
+
 - If ESLint or Prettier fails:
   - run `npm run format`
   - run `npm run lint`
@@ -95,5 +109,6 @@ VITE_PUBLIC_URL=https://example.com
   - ensure routes rewrite to `/index.html`
 
 ## Notes
+
 - This project currently has no required runtime environment variables in source files.
 - Add any additional `VITE_` values to `.env.example` and to Vercel environment settings when needed.

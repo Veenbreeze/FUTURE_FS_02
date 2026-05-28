@@ -11,9 +11,16 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact & Reservations — Victor Salon, Dodoma" },
-      { name: "description", content: "Reserve a treatment at Victor Salon in Dodoma, Tanzania. Address, hours and contact." },
+      {
+        name: "description",
+        content:
+          "Reserve a treatment at Victor Salon in Dodoma, Tanzania. Address, hours and contact.",
+      },
       { property: "og:title", content: "Contact — Victor Salon" },
-      { property: "og:description", content: "Reservations, address and hours for Victor Salon, Dodoma." },
+      {
+        property: "og:description",
+        content: "Reservations, address and hours for Victor Salon, Dodoma.",
+      },
     ],
   }),
   component: ContactPage,
@@ -99,16 +106,23 @@ function ContactPage() {
           <div>
             <p className="eyebrow mb-3">{tr("contact.visit")}</p>
             <p className="leading-relaxed">
-              Victor Salon<br />
-              Dodoma<br />
+              Victor Salon
+              <br />
+              Dodoma
+              <br />
               Tanzania
             </p>
           </div>
           <div>
             <p className="eyebrow mb-3">{tr("contact.reach")}</p>
             <p className="leading-relaxed">
-              <a href="tel:+255616524726" className="hover:text-accent">+255 616 524 726</a><br />
-              <a href="mailto:hello@victorsalon.co.tz" className="hover:text-accent">hello@victorsalon.co.tz</a>
+              <a href="tel:+255616524726" className="hover:text-accent">
+                +255 616 524 726
+              </a>
+              <br />
+              <a href="mailto:hello@victorsalon.co.tz" className="hover:text-accent">
+                hello@victorsalon.co.tz
+              </a>
             </p>
           </div>
           <div>
@@ -137,8 +151,18 @@ function ContactPage() {
 }
 
 function Field({
-  label, name, type = "text", textarea = false, required = false,
-}: { label: string; name: string; type?: string; textarea?: boolean; required?: boolean }) {
+  label,
+  name,
+  type = "text",
+  textarea = false,
+  required = false,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  textarea?: boolean;
+  required?: boolean;
+}) {
   const cls =
     "w-full bg-transparent border-0 border-b border-border focus:border-accent focus:outline-none py-3 text-base text-foreground placeholder:text-muted-foreground transition-colors";
   return (

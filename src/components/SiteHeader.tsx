@@ -25,14 +25,15 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+        scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center justify-between h-20">
         <Link to="/" className="flex items-baseline gap-2 group">
-          <span className="font-display text-2xl tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+          <span
+            className="font-display text-2xl tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Victor Salon
           </span>
           <span className="hidden sm:inline text-[0.65rem] tracking-[0.3em] uppercase text-muted-foreground">
@@ -78,7 +79,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="md:hidden flex items-center gap-3">
-          <button onClick={toggleLang} aria-label="Toggle language" className="text-xs tracking-[0.2em] uppercase">
+          <button
+            onClick={toggleLang}
+            aria-label="Toggle language"
+            className="text-xs tracking-[0.2em] uppercase"
+          >
             {lang === "en" ? "SW" : "EN"}
           </button>
           <button onClick={toggleTheme} aria-label="Toggle theme">

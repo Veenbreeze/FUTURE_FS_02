@@ -31,34 +31,44 @@ function HomePage() {
     {
       title: lang === "en" ? "Signature Facial" : "Huduma ya Uso",
       img: faceImg,
-      desc: lang === "en" ? "75 min · Restorative facial with cleanse, mask & massage." : "Dakika 75 · Huduma ya uso, kusafisha na masaji.",
+      desc:
+        lang === "en"
+          ? "75 min · Restorative facial with cleanse, mask & massage."
+          : "Dakika 75 · Huduma ya uso, kusafisha na masaji.",
       price: "TZS 80,000",
     },
     {
       title: lang === "en" ? "Hair Ceremony" : "Huduma ya Nywele",
       img: hairImg,
-      desc: lang === "en" ? "90 min · Scalp massage, treatment, cut & styling." : "Dakika 90 · Masaji ya kichwa, matibabu, kukata na kupanga.",
+      desc:
+        lang === "en"
+          ? "90 min · Scalp massage, treatment, cut & styling."
+          : "Dakika 90 · Masaji ya kichwa, matibabu, kukata na kupanga.",
       price: "TZS 95,000",
     },
     {
       title: lang === "en" ? "Manicure Ritual" : "Huduma ya Kucha",
       img: nailsImg,
-      desc: lang === "en" ? "45 min · Shape, polish, oil massage and finish." : "Dakika 45 · Kupanga, rangi, masaji ya mafuta.",
+      desc:
+        lang === "en"
+          ? "45 min · Shape, polish, oil massage and finish."
+          : "Dakika 45 · Kupanga, rangi, masaji ya mafuta.",
       price: "TZS 35,000",
     },
   ];
 
-  const testimonials = lang === "en"
-    ? [
-        { q: "An hour at Victor Salon and I left feeling brand new.", a: "Asha M." },
-        { q: "Every detail considered. The most professional salon in Dodoma.", a: "John K." },
-        { q: "Friendly, skilled, and never rushed. My new go-to.", a: "Neema P." },
-      ]
-    : [
-        { q: "Saa moja Victor Salon na nikatoka nikijihisi mpya kabisa.", a: "Asha M." },
-        { q: "Kila kitu kimezingatiwa. Saluni bora zaidi Dodoma.", a: "John K." },
-        { q: "Wakarimu, wenye ujuzi, na hawana haraka. Mahali pangu pa kudumu.", a: "Neema P." },
-      ];
+  const testimonials =
+    lang === "en"
+      ? [
+          { q: "An hour at Victor Salon and I left feeling brand new.", a: "Asha M." },
+          { q: "Every detail considered. The most professional salon in Dodoma.", a: "John K." },
+          { q: "Friendly, skilled, and never rushed. My new go-to.", a: "Neema P." },
+        ]
+      : [
+          { q: "Saa moja Victor Salon na nikatoka nikijihisi mpya kabisa.", a: "Asha M." },
+          { q: "Kila kitu kimezingatiwa. Saluni bora zaidi Dodoma.", a: "John K." },
+          { q: "Wakarimu, wenye ujuzi, na hawana haraka. Mahali pangu pa kudumu.", a: "Neema P." },
+        ];
 
   return (
     <SiteLayout>
@@ -76,7 +86,8 @@ function HomePage() {
           <div className="fade-up max-w-2xl">
             <p className="eyebrow mb-6">{tr("home.eyebrow")}</p>
             <h1 className="text-5xl md:text-7xl leading-[1.05] text-foreground">
-              {tr("home.h1.l1")}<br />
+              {tr("home.h1.l1")}
+              <br />
               {tr("home.h1.l2")}
             </h1>
             <p className="mt-6 max-w-md text-base md:text-lg text-foreground/80 leading-relaxed">
@@ -103,9 +114,7 @@ function HomePage() {
       {/* INTRO */}
       <section className="py-28 md:py-40 px-6 md:px-10 max-w-5xl mx-auto text-center">
         <p className="eyebrow mb-6">{tr("home.intro.eyebrow")}</p>
-        <h2 className="text-3xl md:text-5xl leading-[1.15]">
-          {tr("home.intro.h")}
-        </h2>
+        <h2 className="text-3xl md:text-5xl leading-[1.15]">{tr("home.intro.h")}</h2>
       </section>
 
       <div className="hairline mx-6 md:mx-10" />
@@ -117,7 +126,10 @@ function HomePage() {
             <p className="eyebrow mb-4">{tr("home.featured.eyebrow")}</p>
             <h2 className="text-3xl md:text-4xl">{tr("home.featured.h")}</h2>
           </div>
-          <Link to="/services" className="text-xs tracking-[0.22em] uppercase border-b border-foreground pb-1 hover:text-accent hover:border-accent">
+          <Link
+            to="/services"
+            className="text-xs tracking-[0.22em] uppercase border-b border-foreground pb-1 hover:text-accent hover:border-accent"
+          >
             {tr("home.featured.viewAll")}
           </Link>
         </div>
@@ -148,20 +160,26 @@ function HomePage() {
       {/* ABOUT STRIP */}
       <section className="py-24 md:py-32 px-6 md:px-10 max-w-7xl mx-auto grid gap-12 md:grid-cols-2 md:items-center">
         <div className="aspect-[4/5] overflow-hidden">
-          <img src={aboutImg} alt="Salon interior" loading="lazy" width={1280} height={1280} className="h-full w-full object-cover" />
+          <img
+            src={aboutImg}
+            alt="Salon interior"
+            loading="lazy"
+            width={1280}
+            height={1280}
+            className="h-full w-full object-cover"
+          />
         </div>
         <div>
           <p className="eyebrow mb-6">{tr("home.about.eyebrow")}</p>
-          <h2 className="text-3xl md:text-5xl leading-[1.15] mb-8">
-            {tr("home.about.h")}
-          </h2>
-          <p className="text-base leading-relaxed text-foreground/80 mb-4">
-            {tr("home.about.p1")}
-          </p>
+          <h2 className="text-3xl md:text-5xl leading-[1.15] mb-8">{tr("home.about.h")}</h2>
+          <p className="text-base leading-relaxed text-foreground/80 mb-4">{tr("home.about.p1")}</p>
           <p className="text-base leading-relaxed text-foreground/80 mb-10">
             {tr("home.about.p2")}
           </p>
-          <Link to="/about" className="text-xs tracking-[0.22em] uppercase border-b border-foreground pb-1 hover:text-accent hover:border-accent">
+          <Link
+            to="/about"
+            className="text-xs tracking-[0.22em] uppercase border-b border-foreground pb-1 hover:text-accent hover:border-accent"
+          >
             {tr("home.about.cta")}
           </Link>
         </div>
@@ -174,7 +192,10 @@ function HomePage() {
           <div className="grid gap-12 md:grid-cols-3">
             {testimonials.map((t) => (
               <figure key={t.a} className="text-center">
-                <blockquote className="font-display text-2xl leading-snug" style={{ fontFamily: "var(--font-display)" }}>
+                <blockquote
+                  className="font-display text-2xl leading-snug"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   “{t.q}”
                 </blockquote>
                 <figcaption className="mt-6 text-xs tracking-[0.25em] uppercase text-muted-foreground">
@@ -188,12 +209,8 @@ function HomePage() {
 
       {/* CTA */}
       <section className="py-32 md:py-44 px-6 md:px-10 text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-6xl leading-[1.1]">
-          {tr("home.cta.h")}
-        </h2>
-        <p className="mt-6 text-foreground/70">
-          {tr("home.cta.sub")}
-        </p>
+        <h2 className="text-4xl md:text-6xl leading-[1.1]">{tr("home.cta.h")}</h2>
+        <p className="mt-6 text-foreground/70">{tr("home.cta.sub")}</p>
         <Link
           to="/contact"
           className="inline-block mt-10 text-xs tracking-[0.22em] uppercase bg-foreground text-background px-8 py-4 hover:bg-accent transition-colors"

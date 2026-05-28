@@ -31,7 +31,11 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Victor Salon — Modern Salon in Dodoma, Tanzania" },
-      { name: "description", content: "Victor Salon — a modern salon in Dodoma, Tanzania offering hair, skin and nail care." },
+      {
+        name: "description",
+        content:
+          "Victor Salon — a modern salon in Dodoma, Tanzania offering hair, skin and nail care.",
+      },
       { name: "author", content: "Victor Salon" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -69,4 +73,3 @@ function RootComponent() {
     </SiteProvider>
   );
 }
-

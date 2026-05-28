@@ -15,17 +15,29 @@ export function SiteFooter() {
             {tr("footer.tagline")}
           </p>
           <div className="mt-6 flex gap-5 text-foreground/70">
-            <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
-            <a href="#" aria-label="Facebook" className="hover:text-accent transition-colors"><Facebook size={18} /></a>
-            <a href="mailto:hello@victorsalon.co.tz" aria-label="Email" className="hover:text-accent transition-colors"><Mail size={18} /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors">
+              <Instagram size={18} />
+            </a>
+            <a href="#" aria-label="Facebook" className="hover:text-accent transition-colors">
+              <Facebook size={18} />
+            </a>
+            <a
+              href="mailto:hello@victorsalon.co.tz"
+              aria-label="Email"
+              className="hover:text-accent transition-colors"
+            >
+              <Mail size={18} />
+            </a>
           </div>
         </div>
 
         <div>
           <div className="eyebrow mb-4">{tr("footer.visit")}</div>
           <p className="text-sm leading-relaxed text-foreground/80">
-            Victor Salon<br />
-            Dodoma<br />
+            Victor Salon
+            <br />
+            Dodoma
+            <br />
             Tanzania
           </p>
         </div>
@@ -42,11 +54,19 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-6 flex flex-col md:flex-row gap-3 items-center justify-between text-xs text-muted-foreground tracking-wide">
-          <p>© {new Date().getFullYear()} Victor Salon. {tr("footer.rights")}</p>
+          <p>
+            © {new Date().getFullYear()} Victor Salon. {tr("footer.rights")}
+          </p>
           <div className="flex gap-6">
-            <Link to="/about" className="hover:text-accent">{tr("nav.about")}</Link>
-            <Link to="/services" className="hover:text-accent">{tr("nav.services")}</Link>
-            <Link to="/contact" className="hover:text-accent">{tr("nav.contact")}</Link>
+            <Link to="/about" className="hover:text-accent">
+              {tr("nav.about")}
+            </Link>
+            <Link to="/services" className="hover:text-accent">
+              {tr("nav.services")}
+            </Link>
+            <Link to="/contact" className="hover:text-accent">
+              {tr("nav.contact")}
+            </Link>
           </div>
         </div>
       </div>

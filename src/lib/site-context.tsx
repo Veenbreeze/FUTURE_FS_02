@@ -46,7 +46,10 @@ export const t: Dict = {
   "home.featured.h": { en: "A small, considered menu.", sw: "Orodha ndogo, iliyotayarishwa." },
   "home.featured.viewAll": { en: "View all", sw: "Ona zote" },
   "home.about.eyebrow": { en: "Our Philosophy", sw: "Falsafa Yetu" },
-  "home.about.h": { en: "Modern care, rooted in Tanzania.", sw: "Huduma za kisasa, mizizi Tanzania." },
+  "home.about.h": {
+    en: "Modern care, rooted in Tanzania.",
+    sw: "Huduma za kisasa, mizizi Tanzania.",
+  },
   "home.about.p1": {
     en: "Victor Salon was founded on a single idea: that beauty services should feel personal, not rushed. Our space is calm, our team is trained, our standards are high.",
     sw: "Victor Salon ilianzishwa kwa wazo moja: huduma za urembo zihisi za binafsi, si za haraka. Nafasi yetu ni tulivu, timu yetu imefundishwa, viwango vyetu ni juu.",
@@ -57,7 +60,10 @@ export const t: Dict = {
   },
   "home.about.cta": { en: "Read our story", sw: "Soma habari yetu" },
   "home.testimonials.eyebrow": { en: "In Their Words", sw: "Kwa Maneno Yao" },
-  "home.cta.h": { en: "Reserve your seat at Victor Salon.", sw: "Hifadhi nafasi yako Victor Salon." },
+  "home.cta.h": {
+    en: "Reserve your seat at Victor Salon.",
+    sw: "Hifadhi nafasi yako Victor Salon.",
+  },
   "home.cta.sub": {
     en: "Bookings are taken by phone, email, or through the form.",
     sw: "Hifadhi zinafanyika kwa simu, barua pepe, au fomu.",
@@ -66,13 +72,19 @@ export const t: Dict = {
 
   // Services
   "svc.eyebrow": { en: "The Menu", sw: "Orodha" },
-  "svc.h1": { en: "A small list, written carefully.", sw: "Orodha fupi, iliyoandikwa kwa uangalifu." },
+  "svc.h1": {
+    en: "A small list, written carefully.",
+    sw: "Orodha fupi, iliyoandikwa kwa uangalifu.",
+  },
   "svc.lead": {
     en: "We offer a focused selection of services. Each is the result of careful refinement. All prices are in Tanzanian Shillings (TZS).",
     sw: "Tunatoa huduma chache zilizochaguliwa kwa makini. Bei zote ni za Shilingi za Tanzania (TZS).",
   },
   "svc.chapter": { en: "Chapter", sw: "Sehemu" },
-  "svc.cta.h": { en: "Unsure which to choose? We will help you decide.", sw: "Hujui ipi ichague? Tutakusaidia kuamua." },
+  "svc.cta.h": {
+    en: "Unsure which to choose? We will help you decide.",
+    sw: "Hujui ipi ichague? Tutakusaidia kuamua.",
+  },
   "svc.cta.btn": { en: "Speak with us", sw: "Zungumza nasi" },
   "svc.skin": { en: "Skin & Face", sw: "Ngozi na Uso" },
   "svc.hair": { en: "Hair", sw: "Nywele" },
@@ -82,7 +94,10 @@ export const t: Dict = {
 
   // About
   "about.eyebrow": { en: "About the Salon", sw: "Kuhusu Saluni" },
-  "about.h1": { en: "A salon built on detail, trust, and time.", sw: "Saluni iliyojengwa kwa undani, imani, na muda." },
+  "about.h1": {
+    en: "A salon built on detail, trust, and time.",
+    sw: "Saluni iliyojengwa kwa undani, imani, na muda.",
+  },
   "about.body1": {
     en: "Victor Salon opened in Dodoma with a simple mission: to bring modern, professional salon care to our city. What started as one chair has grown into a small team — but the principle has not changed: do fewer things, do them slowly, do them well.",
     sw: "Victor Salon ilifunguliwa Dodoma kwa lengo rahisi: kuleta huduma za kisasa za saluni jijini mwetu. Ilianza kama kiti kimoja na kukua kuwa timu ndogo — lakini msingi haujabadilika: fanya machache, polepole, vizuri.",
@@ -98,11 +113,20 @@ export const t: Dict = {
   "about.values.eyebrow": { en: "Values", sw: "Maadili" },
   "about.values.h": { en: "Three quiet commitments.", sw: "Ahadi tatu tulivu." },
   "about.value1.t": { en: "Care", sw: "Uangalifu" },
-  "about.value1.d": { en: "No appointment is rushed. Time is the active ingredient.", sw: "Hakuna miadi inayoharakishwa. Muda ndio kiungo kikuu." },
+  "about.value1.d": {
+    en: "No appointment is rushed. Time is the active ingredient.",
+    sw: "Hakuna miadi inayoharakishwa. Muda ndio kiungo kikuu.",
+  },
   "about.value2.t": { en: "Craft", sw: "Ufundi" },
-  "about.value2.d": { en: "Every stylist trains continuously. Education is part of the work.", sw: "Kila mtaalamu hujifunza daima. Elimu ni sehemu ya kazi." },
+  "about.value2.d": {
+    en: "Every stylist trains continuously. Education is part of the work.",
+    sw: "Kila mtaalamu hujifunza daima. Elimu ni sehemu ya kazi.",
+  },
   "about.value3.t": { en: "Respect", sw: "Heshima" },
-  "about.value3.d": { en: "Your visit is private. We listen first, then suggest.", sw: "Ziara yako ni ya faragha. Tunasikiliza kwanza, kisha tunashauri." },
+  "about.value3.d": {
+    en: "Your visit is private. We listen first, then suggest.",
+    sw: "Ziara yako ni ya faragha. Tunasikiliza kwanza, kisha tunashauri.",
+  },
   "about.team.eyebrow": { en: "The Team", sw: "Timu" },
   "about.team.h": { en: "Skilled hands. One philosophy.", sw: "Mikono ya ujuzi. Falsafa moja." },
 
@@ -121,10 +145,19 @@ export const t: Dict = {
   "contact.visit": { en: "Visit", sw: "Tutembelee" },
   "contact.reach": { en: "Reach us", sw: "Wasiliana nasi" },
   "contact.hours": { en: "Hours", sw: "Saa za kazi" },
-  "contact.success": { en: "Thank you. We will be in touch within 24 hours.", sw: "Asante. Tutawasiliana ndani ya saa 24." },
-  "contact.error": { en: "Something went wrong. Please try again or call us.", sw: "Tatizo limetokea. Tafadhali jaribu tena au tupigie." },
+  "contact.success": {
+    en: "Thank you. We will be in touch within 24 hours.",
+    sw: "Asante. Tutawasiliana ndani ya saa 24.",
+  },
+  "contact.error": {
+    en: "Something went wrong. Please try again or call us.",
+    sw: "Tatizo limetokea. Tafadhali jaribu tena au tupigie.",
+  },
   "contact.errName": { en: "Please enter your name", sw: "Tafadhali andika jina lako" },
-  "contact.errEmail": { en: "Please enter a valid email", sw: "Tafadhali andika barua pepe sahihi" },
+  "contact.errEmail": {
+    en: "Please enter a valid email",
+    sw: "Tafadhali andika barua pepe sahihi",
+  },
   "contact.errMsg": { en: "Tell us a little more", sw: "Tueleze zaidi kidogo" },
 };
 
@@ -145,8 +178,10 @@ export function SiteProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
-    const savedTheme = (typeof window !== "undefined" && (localStorage.getItem("theme") as Theme)) || "light";
-    const savedLang = (typeof window !== "undefined" && (localStorage.getItem("lang") as Lang)) || "en";
+    const savedTheme =
+      (typeof window !== "undefined" && (localStorage.getItem("theme") as Theme)) || "light";
+    const savedLang =
+      (typeof window !== "undefined" && (localStorage.getItem("lang") as Lang)) || "en";
     setThemeState(savedTheme);
     setLangState(savedLang);
   }, []);
@@ -154,13 +189,17 @@ export function SiteProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.classList.toggle("dark", theme === "dark");
-    try { localStorage.setItem("theme", theme); } catch {}
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {}
   }, [theme]);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.lang = lang;
-    try { localStorage.setItem("lang", lang); } catch {}
+    try {
+      localStorage.setItem("lang", lang);
+    } catch {}
   }, [lang]);
 
   const tr = (key: keyof typeof t) => t[key]?.[lang] ?? String(key);
